@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características</title>
+    <link rel="stylesheet" href="../src/styles/caracteristicas.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <img src="../src/assets/inicio.jpg" alt="">
+        <h1>Insira suas características abaixo e descubra qual personagem de Star Wars você é</h1>
+        <div class="content-container">
+
+            <label for="altura_user">Altura:</label>
+            <input type="text" id="altura_user" placeholder="ex: 180">
+
+            <label for="peso_user">Peso:</label>
+            <input type="text" id="peso_user" placeholder="ex:77">
+
+            <label for="select_genero">Gênero:</label>
+            <select name="Select Gênerio" id="select_genero">
+                <option value="#"></option>
+                <option value="male">Masculino</option>
+                <option value="female">Feminino</option>
+            </select>
+
+            <label for="select_cor_olho">Cor do Olho:</label>
+            <select name="Select Cor de Olho" id="select_cor_olho">
+                <option value="#"></option>
+                <option value="blue">Azul</option>
+                <option value="yellow">Amarelo</option>
+                <option value="brown">Castanho</option>
+                <option value="red">Vermelhor</option>
+                <option value="blue-gray">Azul-Acinzentado</option>
+            </select>
+
+            <label for="select_cor_olho">Cor de Cabelo</label>
+            <select name="Select Cor do Cabelo" id="select_cor_cabelo">
+                <option value="#"></option>
+                <option value="blond">Loiro</option>
+                <option value="brown">Castanho</option>
+                <option value="black">Preto</option>
+                <option value="grey">Cinza</option>
+            </select>
+
+            <label for="select_cor_pele">Cor de Pele</label>
+            <select name="Select Cor da Pele" id="select_cor_pele">
+                <option value="#"></option>
+                <option value="white">Branco</option>
+                <option value="light">Claro</option>
+            </select>
+
+            <button onclick="descobrirPersonagem()">Descobrir</button>
+        </div>
+    </main>
+</body>
+</html>
