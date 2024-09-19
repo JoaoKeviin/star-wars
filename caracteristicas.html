@@ -4,26 +4,21 @@
     <meta charset="utf-8">
     <title>Consulta de Personagens</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        pre {
-            background-color: antiquewhite;
-            padding: 10px;
-            white-space: pre-wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/caracteristicas.css">
 </head>
 <body>
+    <main>
+      
     <form id="formulario">
-        <label>Nome: <input type="text" name="nome" required></label><br>
-        <label>Altura: <input type="text" name="altura" required></label><br>
-        <label>Peso: <input type="text" name="peso" required></label><br>
+        <label>Nome: <input type="text" id="input_nome" name="nome" required></label><br>
+        <label>Altura: <input type="number" id="input_altura" name="altura" required></label><br>
+        <label>Peso: <input type="number" id="input_peso" name="peso" required></label><br>
         <button type="submit">Consultar Personagens</button>
     </form>
+    <div class="espacamento">
     <pre id="console"></pre>
+    </div>
+    </main>
 </body>
 </html>
 
@@ -32,13 +27,20 @@
     document.addEventListener("DOMContentLoaded", () => {
         const formulario = document.querySelector("#formulario");
         const consoleDiv = document.querySelector("#console");
+        const nome = document.getElementById("input_nome");
+        const altura = document.getElementById("input_altura");
+        const peso = document.getElementById("input_peso");
 
+
+     
         formulario.addEventListener("submit", (evento) => {
             evento.preventDefault();
             const altura = formulario.altura.value;
             const peso = formulario.peso.value;
             buscarPersonagem(altura, peso);
         });
+
+    
 
         function buscarPersonagem(altura, peso) {
             swapiModule.getPeople(data => {
@@ -57,7 +59,7 @@
 
                 consoleDiv.innerHTML = encontrados.length 
                     ? `Personagem que mais se parece com você é o:\n${JSON.stringify(encontrados, null, 2)}`
-                    : `Nenhum personagem encontrado com altura ${altura} e peso ${peso}.`;
+                    : `Infelizmente não tem nenhum personagem com as caracteristica ${altura} e peso ${peso}.`;
             });
         }
     });
